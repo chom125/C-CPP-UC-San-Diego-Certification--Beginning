@@ -1,0 +1,74 @@
+/*
+ *8/1/2016
+ *file name (C1A4E3_main.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The program uses the function, main() to mark the start of the beginning of the program
+ *The program also uses the PrintLines0(), PrintLines1(), PrintLines2(), and PrintLines3()
+	*functions that display parameters of characters an numbers given by 
+	*user inputs.
+ */
+#include <iostream>
+using namespace std;
+//#include "PrintLines0.c"; // including files
+//#include "PrintLines1.c"; // including files
+//#include "PrintLines2.c"; // including files
+//#include "PrintLines3.c"; // including files
+/*
+ *This program must returns max of the number and floating point user inputs respectively. The
+ *Program must also meet the following critiria:
+ *1. prompt the user to enter any three space-separated decimal numeric values on the same line;
+ *2. pass the user-entered values to both mMaxOf3 and fMaxOf3 as arguments;
+ *3. display the results of both calls using the following 2-line format, where the question marks
+ *represent the values passed to and returned from the macro and function:
+ *mMaxOf3(?, ?, ?) returned ?
+ *fMaxOf3(?, ?, ?) returned ?
+ */
+void PrintLines0();//Function Prototypes with correct arguments stated in order of operation
+void PrintLines1(int in_char);
+void PrintLines2(int in_char, int num_char);
+void PrintLines3(int in_char, int num_char, int line_Num);
+int main()                                                //start of main() function
+{
+ for (int num = 0; num < 1; num++)                        //for loop to take the user input 5 times
+{
+int num_char, num_line;                                   //inializing local variables 
+char in_char;                                             //iniializing in_char
+  cout << "Please enter a character and two integers: \n";//Prompt the user to enter a char and 2 integers
+//Reading the user inputs
+cin >> in_char;                                           //scan for input character
+cin >> num_char;
+cin >> num_line;
+PrintLines0();                                            //Zero parameter function call
+PrintLines1(in_char);                                     //One parameter function call
+PrintLines2(in_char, num_char);                           //Two parameter function call
+PrintLines3(in_char, num_char, num_line);                //Three parameter function call  
+ }
+return 0;
+}
+void PrintLines0()                                        //PrintLines0() has zero arguments
+ {
+cout << "Z\n";                                            //print one Z in one line
+}
+void PrintLines1(int input_character)                     //PrintLines1.c has one argument 
+{
+cout << "";                                               //space
+}
+void PrintLines2(int input_character, int num_char)       //PrintLines2.() has two arguments
+ { 
+cout << "";                                               //space
+ }
+void PrintLines3(int in_char, int num_char, int line_Num) //PrintLines3() function call
+ {
+ int charnumb_copy;
+ while (line_Num > 0)                                     //while loop
+  {
+  for (charnumb_copy = num_char; charnumb_copy > 0; --charnumb_copy)//For loop 
+  {
+  cout << char(in_char);
+  }
+  cout << "\n";                                           //end of line
+  --line_Num;                                             //decrementing line number
+ }
+ }

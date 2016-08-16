@@ -1,0 +1,35 @@
+/* 
+ *July 20th, 2016
+ *file name: (C1A2E1_main.cpp)
+ *Operating System (Win10)
+ *Compiler & Version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The functions that is used is main() which marks the beginning of
+ * the program. The program also uses cin.get() which captures
+ * the input character even if whitespace and a created function
+ * convertedCharatacter which converts the input ASCII character. 
+ */ 
+
+#include <iostream>
+const int TRANS_CASE = 'a' - 'A';//assume lower-upper case differnential
+
+/*
+ * This program reads an input character from a user input and converts it to an upper 
+ *case format with single quotes around  *the original and converted characters as shown: 
+ *'A' is 'a'. There are restriction to this program such as: not test anything; not to 
+ *use tolower or any other function to do the conversion. And not name any variable uppercase.
+ *
+ * Because of the conversion of ASCII if the the user enters anything other than an 
+ *uppercase character; The user precedes the input character with a whitespace.
+ */
+
+int main()
+{
+    char convertedChar;
+    char user_input;                                 //Variable to hold converted character
+    std::cout << "\n Input a character: ";           //Prompting user to input a character
+    std::cin.get(user_input);                        //User Input character 
+    convertedChar = (char)(user_input + TRANS_CASE); //Character conversion (As per ASCII Values)
+    std::cout << "\n\n The lowercase equivalent of '" << user_input << "' is '" << convertedChar << "' \n\n ";
+    return 0;
+}

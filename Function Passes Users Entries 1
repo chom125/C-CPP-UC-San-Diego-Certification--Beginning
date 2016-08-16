@@ -1,0 +1,39 @@
+/*
+ *Lawrence Woods, U06928025
+ *Your email address: layman125@gmail.com
+ *C/C++ Programming I Fundamental Programming Concepts, Section ID 116158, Raymond L. Mitchell 
+ *7/31/2016
+ *file name (C1A4E2_PrintLines-1.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The program uses the function, main() to mark the start of the beginning of the program.
+ *The program also uses the PrintLines0(), and PrintLines1()functions to pass the integer
+	*parameters that are displayed for the users inputs of two integers.
+ */
+#include <iostream>//#include "PrintLines1.c"; 
+using namespace std;
+/*The program prompts user input of characters and numbers and displays and passes the 
+ *appropriate user entries to the function arguments. The functions then print out the 
+ *appropriate displays. Also, the function has the following criteria: Prompts the to enter 
+ *2 integers inputs. The program makes the folowing call in order passing the appropriate 
+ *argument:PrintLines(charcterToDisplay, numberOfCharacters). The program also has test 
+ *inputs to ensure the program is working properly. The test inputs are as follows: 
+ *U 20 10, V 0 10, W 25 0, X 25 1, and Y 150 3.
+ */
+void PrintLines1(int input_character);
+int main()                                                
+{
+ for (int num = 0; num < 1; num++)                        //for loop to take the user input 5 times
+ {
+  char in_char;                                           //start of main() function
+		cout << "Please enter a charecter and one integer: ";   //Prompt the user to enter a char and 2 integers
+  cin >> in_char;                                         //cin for input character
+  PrintLines1(in_char);                                   //Two parameter function call
+ }
+ return 0;
+}
+void PrintLines1(int input_character)                     //PrintLines1.c has one arguments pased
+{
+ cout << "C";                                             //cout "C"
+}

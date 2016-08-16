@@ -1,0 +1,59 @@
+/*
+ *August 7th, 2016
+ *file name: (C1A5E1_main.c)
+ *Operating System (Win10)
+ *Compiler & Version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ */
+/*includes functions involving memory allocation, process control, conversions and others.*/
+#include <stdio.h>             /*standard inpt/oupt header files*/  
+#define MAX_RESPONDENTS 15     /*maximum number of respondents*/
+#define MIN_RESPONSE_VALUE (-3)/*minimum response value*/
+#define MAX_RESPONSE_VALUE  11 /*maximum response value*/
+#define OUT_OF_RANGE_LIMIT 1   /*number of out of range responses that terminate program*/
+#define SIZE (MAX_RESPONSE_VALUE - MIN_RESPONSE_VALUE + 1)/*elements in respondents array*/
+/*
+ *The program conducts a survey. The program uses a 1 dimensional array which has the exact number of leagal
+ *responses and contains a count of  how many of them occurreded. A variable consecutiveRangeErrors is used
+ *to count the leagal out of range resposes input by the user. If an illegal response occurres the counter
+ *is incremented, but if the maximum number of responses has not occurreded then an error messeage will be 
+ *displayed and the user will be prompted to continue to inter responses until the legal limit of responses
+ *has been reached. Once a legal response has occurred the counter will be set back to zero and the correct 
+ *array element will be incremented. Once the number of legal responses have been enter the program will
+ *diplayed two different tables one the Rating and Responses. 
+ */
+int main(void)
+{
+   int responses[SIZE] = {0};                  /*array to hold count of each response value*/
+   int consecutiveRangeErrors = 0, itt;        /*consecutiveRangeErrors to keeps track of bad inputs.*/
+   for (itt = 1; itt <= MAX_RESPONDENTS; itt++)/*loop while responses in legal limit.*/
+   {
+      int value;
+      /*Print statement to prompt users input* between max and min response value*/
+      printf("Respondent #%i: Enter a decimal value between %i and %i to indicate how much"
+      "you like a product:", itt, MIN_RESPONSE_VALUE, MAX_RESPONSE_VALUE);
+      scanf("%i", &value);        /*scan for user input value*/
+      /*if statement inializes if min response > value or max response < value*/
+      if (value < MIN_RESPONSE_VALUE || value > MAX_RESPONSE_VALUE)
+      {
+         printf("Invalid Response Entered.\n");           /*print out Invalid Response Entered*/
+         consecutiveRangeErrors++;                        /*increment error counter*/
+         if (consecutiveRangeErrors >= OUT_OF_RANGE_LIMIT)/*program ends if out of range more then once.*/
+            break;                                        /*break from loop*/
+         else                                             /*if program with valid response criteria continue*/
+         {
+            itt--;                                        /*decrement counter*/
+            continue;                                     /*continue program*/
+         }
+      }
+      else                                                /*response is in range*/
+      {
+         consecutiveRangeErrors = 0;                      /*reset error counter*/
+         responses[value - MIN_RESPONSE_VALUE]++;         /*increment response count matrix*/
+      }
+   }
+   printf("Rating    Responses\n"                         /*print ratings and responses*/
+      "------    ---------\n");
+   for (itt = 0; itt < SIZE; itt++)
+      printf("%3i%11i\n", MIN_RESPONSE_VALUE + itt, responses[itt]);/*print response value*/
+   return 0;                                              /*return 0 if program successful*/
+}  

@@ -1,0 +1,44 @@
+/*
+ *August 12th, 2016
+ *file name: (C1A6E3_GetSubstring.c)
+ *Operating System (Win10)
+ *Compiler & Version (Cygwin GnuPG v1.2.6 (GNU/Linux)
+ *
+ *The function used in this program is GetSubstring  wbere the user input represents a string which 
+ *gets copied. The source in GetSubstring(const char source[], int start, int count, char result[]))
+ *represents the string that will be copied from the users input. int start, int count, char result[]);
+ *start is the index source from the first character. Count is the number of characters to copy, 
+ *and result is the result array where the characters are copied.   
+ */
+char *GetSubstring(const char source[], int start, int count, char result[])
+{
+    char *point1 = result;
+    //while loop will walk the pointer from the start index to finishing index
+    while (start > 0)
+    {
+        if (*source == '\0')
+        {
+            *result = '\0';
+            return point1;
+        }
+        start--;
+        source++;
+    }
+    //loop will store the characters from source to result
+    //While loop for pointer where last loop stopped and terminates at end or when count ends
+    while (count > 0)
+    {
+        //below situation is for when the end of source is reached, it adds null char 
+        if (*source == '\0')
+        {
+            *result = '\0';
+            break;
+        }
+        //below instructions set the pointer of result to point at the same value as source
+        *result++ = *source++;
+        count--;
+    }
+    //Processing will reach this point only if the count is reached before the end of source. 
+    *result = '\0';
+    return point1;
+}

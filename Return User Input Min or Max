@@ -1,0 +1,58 @@
+/*
+ *7/29/2016
+ *file name (C1A4E1_ComputeMinimum.c)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ */
+ 
+ /* This program uses the function, main() to mark the start of the beginning of the program
+  * The program also uses the Computermin, functions which are the c++ output and user input
+  * read functions respectively.
+  */
+ 
+	/*This program uses a function ComputeMinium which returns the minimum or
+	 *maximum value of  2 input variables val1 & val2; The created program
+	*ComputeMinimum must compare the values referenced by its parameters 
+	*and return a reference to the smallest of those values; Also, the
+	*program must adhere to the following conditions:
+  *Use two formal parameters, each of type “reference to const double”;
+  *Return type “reference to double” (do not “reference to const double”); 
+  *Use only one statement; 
+  *Don't use variables other than their formal parameters; 
+  *Don't use anything that requires #define or #include; 
+  *Don't use literal values;
+  *Dont assignment, addition, subtraction, multiplication, or division; 
+  *Don't use if, switch, or looping statements; 
+  *Don't call functions or macros; 
+  *Don't display anything;
+  */
+#ifndef C1A4E1_COMPUTEMINIMUM_H_INCLUDED
+#define C1A4E1_COMPUTEMINIMUM_H_INCLUDED
+
+double ComputeMinimum(double val1,double val2)
+{
+return (val1>val2)?val2:val1;
+}
+
+#endif // C1A4E1_COMPUTEMINIMUM_H_INCLUDED //C1A4E1_COMPUTEMAXIMUM_H_INCLUDED
+
+#ifndef C1A4E1_COMPUTEMAXIMUM_H_INCLUDED
+#define C1A4E1_COMPUTEMAXIMUM_H_INCLUDED
+
+double ComputeMaximum(double val1,double val2)
+{
+return (val1>val2)?val1:val2;
+}
+
+#endif // 
+int main()
+{
+double val1,val2;
+
+printf("Enter two values:");
+scanf("%lf%lf",&val1,&val2);
+printf("ComputeMinimum(%lf, %lf) returned %lf\n",val1,val2,ComputeMinimum(val1,val2));
+printf("ComputeMaximum(%lf, %lf) returned %lf\n",val1,val2,ComputeMaximum(val1,val2));
+
+return 0;
+}

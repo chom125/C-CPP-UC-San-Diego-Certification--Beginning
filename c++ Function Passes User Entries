@@ -1,0 +1,53 @@
+/*
+ *7/28/2016
+ *file name (C1A4E3_main.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The program uses the function, main() to mark the start of the beginning of the program
+ *The program also uses the PrintLines0(), PrintLines1(), PrintLines2(), and PrintLines3()
+ *functions that display parameters of characters an numbers given by 
+ *user inputs.
+ */
+#include <iostream> 
+using namespace std;
+/*The program prompts user input of characters and numbers and displays and passes the 
+ *appropriate user entries to the function arguments. The functions then print out the 
+ *appropriate displays. Also, the function has the following criteria: Prompts the to enter 
+ *3 inputs character, the number of times to diplay the character, and the number of lines 
+ *to display. Makes the following calls in order passing the appropriate entries 
+ *PrintLines(charcterToDisplay, numberOfCharacters, numberOfLines). The program also has test 
+	*input to ensure the program is working properly. The test inputs are as follows: 
+	*U 20 10, V 0 10, W 25 0, X 25 1, and Y 150 3.
+ */
+void PrintLines0();
+void PrintLines1(int input_character);
+void PrintLines2(int input_character, int char_Num);
+void PrintLines3(int input_character, int char_Num, int line_Num);
+int main(void)                                            //main() function start of program
+{
+ for (int num=0; num < 1; num++)                          //initiating for loop for inputs
+ {
+  char in_char;//initiating character
+  int num_char, num_line;  //initiating variables
+  cout << "Please enter a charecter and two integers: ";  //prompting user to enter a character and two integers
+  cin >> in_char;                                         // capture user input in_char
+  cin >> num_char;                                        // capture user input num_char
+  cin >> num_line;                                        // capture user input num_line
+  PrintLines3(in_char, num_char, num_line);               //funciton PrintLines1() with three arguments
+}
+return 0;                                                 //return 0 if sucessfull
+}
+void PrintLines3(int input_character, int char_Num, int line_Num)//function call 3 argument
+{
+int charnumb_copy;                                        //initializing integer charnumb_copy
+while (line_Num > 0)                                      //loop while line_Num > 0
+{
+for (charnumb_copy = char_Num; charnumb_copy > 0; --charnumb_copy)//For loop to print the charector char_Num times in one line
+{
+   cout << char(input_character);
+}
+cout << "\n";                                             //next line
+--line_Num;                                               //decrementing line number
+}
+}

@@ -1,0 +1,37 @@
+/*
+ *August 12th, 2016
+ *file name: (C1A6E3_main.c)
+ *Operating System (Win10)
+ *Compiler & Version (Cygwin GnuPG v1.2.6 (GNU/Linux)
+ *
+ *The functions used in this program is the main() finction which is used to mark the 
+ *begingintg of the program. Also, the funcction printf() is used to print to the 
+ *console. Next, the scanf() function is used to scan the user input. The getch() function 
+ *is used to to return the next character from the standard user input. 
+ *
+ *The program gets string from user input and puts the result base onpon 
+ *string lenght.
+ */
+#include <stdio.h>
+#include <string.h>
+#define LENGTH 256
+char *GetSubstring(const char source[], int start, int count, char result[]);
+int main(void)
+{
+    int start_id, char_count;
+    char usr_str[LENGTH], buffer[LENGTH];
+    //Here the user is prompted for a string, store it and remove \n;
+    printf("Enter a string :: \n");
+    fgets(usr_str, LENGTH, stdin);
+    usr_str[strlen(usr_str) - 1] = '\0';
+    //It is then used as a parameter for GetSubstring and printed out;
+    printf("Please provide on the same line start index and character count\n");
+    scanf("%d", &start_id);
+    scanf("%d", &char_count);
+    printf("\"");
+    printf("%s", usr_str);
+    printf("\", %d, %d, extracts \"", start_id, char_count);
+    printf("%s", GetSubstring((const char *)&usr_str, start_id, char_count, buffer));
+    printf("\"\n");
+    return 0;
+}

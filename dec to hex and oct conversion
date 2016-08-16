@@ -1,0 +1,34 @@
+/*
+ * CSE-40475 Section ID 116158, Raymond L. Mitchell 
+ * 7/15/2016
+ * Name of this file (C1A1E2_main.cpp)
+ * Your operating system (Win10)
+ *
+ * Your compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *The functions that is used is main() which marks the beginning of
+ * the program. 
+ */ 
+ 
+#include <iostream>
+#include <cstdlib>
+using std::cin;
+using std::cout;
+using std::dec;
+using std::hex;
+using std::oct;
+
+/*This Program takes a input decimal from a user and converts that decimal number to
+ *Both a Hexadecimal and Octal Number. 
+ *The program also has restrictions such as only use only 1 cout statement, 
+ *use cin to obtain user input and use an use int to as type declaration 
+ */
+ 
+int main()
+{
+    //Prompt the User to Enter a Decimal Number 
+    cout << "Enter any decimal integer numeric value: ";
+    int var;
+    cin >> var;
+    cout << dec << var << " decimal = " << oct << var << " Octal = " <<  hex << var << " hexadecimal\n ";
+    return EXIT_SUCCESS;
+}

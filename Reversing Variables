@@ -1,0 +1,37 @@
+/*
+ *7/27/2016
+ *file name (C1A3E2_main.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ * This program uses the function, main() to mark the start of the beginning of the program
+ * The program also uses the cout, and cin, functions which are the c++ output and user input
+ * read functions respectively.
+ */
+#include <iostream>
+using namespace std;
+const int RECONST = 10;     //reconst of system being used
+/*This program takes the user_input of any variable and reverses that variable and
+ *displays both the original user_input and reversed variable. The program decides
+ *if the user_input is negative, or positive and calculates the reverse of the integer.
+ *The program also does not use any non-const variables that are not type int or type bool
+ *Nor does it use any floating point types such as the pow function, math.h, type double, etc.
+ * Also, do not use arrays or recursion; recursion
+ */
+int main()
+{
+    bool negNumber;                                      //initialize boolean number
+    int user_input;                                      //initialize user_input
+    cout << "Enter an integer value: ";                  //print enter a value
+    cin >> user_input;                                   //get user_input
+    cout << "\"" << user_input << "\"  in reverse is \"";//output statement
+    if (negNumber = user_input < 0)                      //if original number is negative
+        user_input = -user_input;                        //if user_input neg make positive
+    do                                                   //do at least 1 loop
+        cout << user_input % RECONST;                    //print LSD to reverse user_input
+    while (user_input /= RECONST);                       //loop until to reconstruct number
+    if (negNumber)                                       //if user_input is negative
+        cout << "-";                                     //print negative sign
+    cout << "\"\n";                                      //close quotes
+    return 0;
+}

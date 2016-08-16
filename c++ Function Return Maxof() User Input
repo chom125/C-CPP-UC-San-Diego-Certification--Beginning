@@ -1,0 +1,39 @@
+/*
+ *8/1/2016
+ *file name (C1A4E4_main.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The program uses the function, main() to mark the start of the beginning of the program
+ *The program also uses the mMaxOf3(), and fMaxOf3() to calculate the max of integer, and
+ *floating point numbers. The output of the user input is calculated by these fucncitons
+ *and then displayed
+ */
+#include <iostream>
+#include <iomanip>               
+using namespace std;
+/*This program returns the max between MaxOf2, mMaxOf3, fMaxOf2, and fMaxOf3 the program
+ *must also meet the following criteria:
+ *return the maximum of the given parameter values;
+ *support any arithmetic values within the range and precision of type long double;
+ *not use variables other than their formal parameters;
+ *not need #define or #include, except for the #defines used to define mMaxOf2 and mMaxOf3;
+ *not use literal values;
+ *not use assignment, addition, subtraction, multiplication, or division;
+ *not use if, switch, or looping statements;
+ *not display anything.mMaxOf3 and fMaxOf3 must:
+ *not use the conditional operator (?:) or any relational/equality operators (<, >, ==, etc.)
+ */
+int main()
+{
+    long double usr1, usr2, usr3;
+    void mMaxOf3(long double usr1, long double usr2L, long double usr3L);                      
+    void fMaxOf3(long double usr1, long double usr2, long double usr3);                //function with 3 arguments
+    cout << "Enter any 3 space-separated decimal numeric values onto the same line:\n";//promput user input statement
+    cin >> usr1;                                                                       //user defined input
+    cin >> usr2;                                                                       //user devined input
+    cin >> usr3;                                                                       //user difined input
+    cout << "mMaxOf3" << '(' << usr1 << "," << usr2 << "," << usr3 << ')' << setw(12) << "returned ?\n";//output statement 
+    cout << "fMaxOf3" << '(' << usr1 << "," << usr2 << "," << usr3 << ')' << setw(12) << "returned ?\n";//output statement
+    return 0;
+}

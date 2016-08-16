@@ -1,0 +1,41 @@
+ 
+/*
+ *7/16/2016
+ *file name (C1A2E2_main.c)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ * This program uses the function, main() to mark the start of the beginning of the program.
+ * The progam also uses the printf(), and scanf() functions which are the c ouptut and user input
+ * read functions respectivly.  
+ */
+
+#include <stdio.h>
+#define LEADER_CHAR '.'
+#define DIAGONAL_CHAR '%'
+
+/*The program prompts the user to enter any positive decimal integer value;
+ *then uses a nested "for" loop to display the user input number as
+ *a line of diagonal characters on the console. The program uses the exact names
+ *LEADER_CHAR and DIAGNAL_CHAR to represent the output. The LEADER_CHAR is represented
+ *as a dot and the DIAGANAL_CHAR is represented as a '%' such that the display
+ *output is that same as given in this homework.  
+ */
+
+int main(void)
+{
+    int row, col = 0, user_input;                 //inializing variables col, and row and user_input
+
+    printf(" Enter input a integer value ");      //Have the user input a integer value
+    scanf("%d", &user_input);                     //scan for the user_input
+
+    for (row = 0; col < user_input; row++)        //establish nested loop for displaying the output
+	        for (col = 0; col <= row; col++) {    //if col <= row then print DIAGANAL_CHAR
+            if (row == col)
+                printf("%c\n", DIAGONAL_CHAR);    //print character for first row if row == col
+            else                              
+                printf("%c", LEADER_CHAR);        //print LEADER_CHAR if row != col
+        }
+    printf("\n");                                 //print newline
+    return 0;
+}

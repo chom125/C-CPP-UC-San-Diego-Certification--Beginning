@@ -1,0 +1,33 @@
+/*
+ *8/2/2016
+ *file name (C1A4E4_MaxOf.h)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The program uses the function, main() to mark the start of the beginning of the program.
+ *The program also uses the PrintLines0(), and PrintLines1()functions to pass the integer
+ *parameters that are displayed for the users inputs of two integers.
+ */
+/*This program returns the max between MaxOf2, mMaxOf3, fMaxOf2, and fMaxOf3 the program
+ *must also meet the following criteria:
+ *return the maximum of the given parameter values;
+ *support any arithmetic values within the range and precision of type long double;
+ *not use variables other than their formal parameters;
+ *not need #define or #include, except for the #defines used to define mMaxOf2 and mMaxOf3;
+ *not use literal values;
+ *not use assignment, addition, subtraction, multiplication, or division;
+ *not use if, switch, or looping statements;
+ *not display anything.mMaxOf3 and fMaxOf3 must:
+ *not use the conditional operator (?:) or any relational/equality operators (<, >, ==, etc.)
+ */
+//#include "C1A4E4_MaxOf.h"
+#ifndef C1A4E4_MAXOF_H    //checks code between ifndef and #endif
+inline double fMaxOf2(double max_c1, double max_c2)                 //function totally difined inline
+{
+   return max_c1 > max_c2 ? max_c1 : max_c2;                        //same as mMaxof2 but inline function
+}
+inline double fMaxOf3(double max_c1, double max_c2, double max_c3)  //function totally defined here
+{
+   return fMaxOf2(fMaxOf2(max_c1, max_c2), max_c3);//uses fmaxof2 twice to calculate 3 values' max
+}
+#endif                                                              //end of statement

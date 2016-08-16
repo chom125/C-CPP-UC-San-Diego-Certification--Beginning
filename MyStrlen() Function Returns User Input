@@ -1,0 +1,19 @@
+/*
+ *August 12th, 2016
+ *file name: (C1A6E1_MyStrlen.c)
+ *Operating System (Win10)
+ *Compiler & Version (Cygwin GnuPG v1.2.6 (GNU/Linux)
+ *
+ *The function MyStrlen() calculates the length of
+ *the string in s1 and returns the result.
+ */
+#include <stddef.h>
+
+//This will calculate string length;
+size_t MyStrlen(const char *s1)
+{
+    const char *s2;
+    for (s2 = s1; *s2; ++s2)  // Loop to find end of string
+        ;
+    return (size_t)(s2 - s1);
+}

@@ -1,0 +1,44 @@
+/*
+ *7/17/2016
+ *file name (C1A2E3_main.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *This program uses the following functions, main() to start the beginning of the program
+ *and declar variables and literals. This program also uses the printf and scanf functions
+ *which are the c output and input read functions. 
+ */
+
+#include <iostream>
+
+
+/*The program prompts the user to enter any integer values (user_input)
+ * the characters LEADER_CHAR which represets '.' and DIAGONAL_CHAR 
+ * which represnets '%' are used to for a diaganal in which the output
+ * is represenative of the output given in this homework. 
+ */
+
+using namespace std;
+
+int main()
+{
+    const char  LEADER_CHAR = '.';
+    const char DIAGONAL_CHAR = '%'; 
+    int lines; 
+    do                                         //do loop begins when user enters a positive value
+    {
+        cout << "\n\n Enter any positive decimal integer value: ";//Prompting user to enter a positive value
+
+        cin >> lines;                          //read user input
+    } while (lines < 0);                       //check if user input is positive
+    for (int row = 1; row <= lines; row++)     //Outer loop for printing each line and Diagonal character
+    {
+        for (int col = 1; col < row; col++)    //Inner loop to print Leading character before Diagonal
+        {    
+            cout << LEADER_CHAR;               //Printing Leading character '.'
+        }   
+        cout << DIAGONAL_CHAR << "\n";         //Printing Diagonal character '%'
+    }
+    cout << "\n";
+    return 0;
+}

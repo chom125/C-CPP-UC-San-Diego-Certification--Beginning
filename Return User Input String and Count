@@ -1,0 +1,40 @@
+/*
+ *August 12th, 2016
+ *file name: (C1A6E1_main.c)
+ *Operating System (Win10)
+ *Compiler & Version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The function main() to mark the startup of the program after initialization The program
+ *also uses the function fgets() which reads characters from the input stream and stores
+ *its values as a C string into "str" until (num -1) characters have been read or either
+ *a newline or the end-of-file is reached or whichever happens first.
+ *
+ *The main program prompts the user to enter a string and through the call of the function
+ *MyStrlen() and strlen() the program returns the user inputted string and the count of
+ *the number of characters in that string.
+ */
+
+#include <stdio.h>
+#include <string.h>
+
+#define LENGTH 129
+
+size_t MyStrlen(const char *s1);
+
+int main(void)
+{
+    char str_input[LENGTH];                           //declaration of matrix length
+    size_t str_len;
+
+    printf("Enter a string:\n");                      //Prompt user for a string
+    fgets(str_input, LENGTH, stdin);                  //Get user input
+    str_len = strlen(str_input) - 1;                  //Determine length of string input
+    str_input[str_len] = '\0';                        //Replace newline character with null character
+
+    printf("strlen(\"%s\") returned ", str_input);    //Print name of library function
+    printf("%u\n", (unsigned)str_len);                //Print output from library function
+    printf("MyStrlen(\"%s\") returned ", str_input);  //Print name of user function
+    printf("%u\n", (unsigned)MyStrlen(str_input));    //Print output from user function
+
+    return 0;
+}

@@ -1,0 +1,47 @@
+/*
+ *August 8th, 2016
+ *file name: (C1A6E3_main.cpp)
+ *Operating System (Win10)
+ *Compiler & Version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The function main() to mark the startup of the program after initialization The program 
+	*also uses the function fgets() which reads characters from the input stream and stores 
+	*its values as a C string into "str" until (num -1) characters have been read or either 
+	*a newline or the end-of-file is reached or whichever happens first. The function strcmp() 
+	*is also used which compares two null-terminated byte strings lexicographically.
+	*
+	*The main program prompts the user to enter a string and through the call of the function
+	*MyStrlen() and strlen() the program returns the user inputed string and the count of 
+	*the number of characters in that string. 
+ */
+#include <stdio.h>
+#include <stdio.h>
+#include <string.h>
+#define STR_SIZE 128
+size_t strlen(const char *s1);              //Prototyping strlen();
+size_t MyStrlen(const char *s2);            //Prototyping MyStrlen);
+int main()
+{
+char str1[STR_SIZE];                        //establishing char matrix for str1; 
+char str2[STR_SIZE];                        //establishing char matrix for str2;
+//prompt to read the strings str1 and str2
+printf("Enter Sring #1 which may be empty or contain spaces:");
+fgets(str1, STR_SIZE, stdin);               //capture str1 size;
+str1[strlen(str1) - 1] = '\0';              //counts characters until (num -1) end of string;
+printf("Enter Sring #2 which may be empty or contain spaces:");//print enter string #2;
+fgets(str2, STR_SIZE, stdin);               //capture str1 size;
+str2[strlen(str2) - 1] = '\0';              //counts characters until (num -1) end of string;
+printf("strlen(\"");                        //prints the function using builtin strlen;
+printf(str1);                               //prints str1;
+printf("\", \"");                           //prints comma betwee str1 and str2;
+printf(str2);                               //prints string #2;
+printf("\") returned ");                    //prints returned;
+printf("%d\n", strcmp(str1, str2));         //prints 
+printf("MyStrlen(\"");                      //prints the function using defined MyStrlen
+printf(str1);                               //prints str1
+printf("\", \"");                           //prints comma between str1 and str2
+printf(str2);                               //prints str2
+printf("\") returned ");                    //prints returned
+printf("%d\n", MyStlen(str1, str2));        //prints returned value from MyStrlen str1 and str2
+return 0;
+}

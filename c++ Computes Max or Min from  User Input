@@ -1,0 +1,44 @@
+/*
+ *August 8th, 2016
+ *file name: (C1A5E2_main.cpp)
+ *Operating System (Win10)
+ *Compiler & Version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ */
+#include <iostream>
+/*Prototyping ComputerMaximum  and ComputerMinimum reference pointers*/
+double &ComputeMaximum(const double &val1, const double &val2);
+double &ComputeMinimum(const double &val1, const double &val2);
+/*The program has several functions which are as follows: The main() function
+ *which determines the start of the program. ComputeMaximum and ComputeMinimum
+ *which are functions which calculate the maximum and minimum of two user
+ *inputs and returns either the maximum or minimum inputs.
+ *
+ *The program computes the maximum or minimum value between two user imputed values. 
+ *The program compares the two imputed values given by the user and computes the maximum 
+ *input and returns that maximum or minimum computed values. The return function returns 
+ *the recorded values for both ComputeMaximum and ComputeMinimum and returns both the max and
+ *minimum numbers. The functions that compute the maximum or minim values are two functions 
+ *called ComputeMaximum or ComputeMinimum The program also will reference a const double data 
+ *type but return only a double type value. The program does not return any other data type 
+ *other than a double type. The program also does not use #define or #include or any literal 
+ *values. The functions that are created in this program does not call any functions or macros.
+ */
+int main()
+{
+    double usr_input1;//defining data type double user input and store it.
+    double usr_input2;//defining data type double user input and store it. 
+    std::cout << "Please input two space separated decimal numeric values";//output statement for user inputs.
+    std::cin >> usr_input1;//capture user input 1.
+    std::cin >> usr_input2;//capture user input 2.
+    //computes the inputs of user inputs 1 and 2. Returns the minimum value between the two and prints it out.
+    std::cout << "ComputeMinimum(" << usr_input1;//compute the minimum and return to print.
+    std::cout << " , " << usr_input2 << ") returned ";
+    //print the minimum inputs of user input 1 and 2 const double. 
+    std::cout << ComputeMinimum((double)usr_input1, (double)usr_input2) << "\n";
+    //prints the inputs of user inputs 1 and 2. Returns the maximum value between the two and prints it out.  
+    std::cout << "ComputeMaximum(" << usr_input1;//compute the maximum from user input 1 and 2. 
+    std::cout << " , " << usr_input2 << ") returned ";
+    //prints maximum of data type const double to user usr_input1 and usr_input2. 
+    std::cout << ComputeMaximum((double)usr_input1, (double)usr_input2) << "\n";
+    return 0;
+}

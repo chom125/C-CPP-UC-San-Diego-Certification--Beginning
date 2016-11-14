@@ -1,0 +1,55 @@
+/*
+ *7/10/2016
+ *file name (C1A1E2_main.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *This Program takes a integer decimal from a user input  and converts that decimal number to
+ *both a Hex and Octal Number. The functions used are ConvToSOctal which is a function that is 
+ *used to convert a decimal number to Octal Numbers and ConvtToHex which converts a Decimal 
+ *Number to a Hexadecimal Number. main determines the beginning of the program. 
+ */
+
+#include <iostream>
+#define LEADER_CHAR '.'
+#define DIAGONAL_CHAR '%'
+
+using namespace std;
+
+//Main function
+int main()
+{
+int i,j;
+int lines;
+
+//Loop till user enters a positive value
+do
+{
+//Prompting user to enter a positive value
+cout << "\n\n Enter any positive decimal integer value: ";
+
+//Reading input from user
+cin >> lines;
+}while(lines < 0); //Checking input to be positive
+
+cout << "\n\n";
+
+//Printing required pattern
+
+//Outer loop for printing each line and Diagonal character
+for(i=1; i<=lines; i++)
+{
+//Inner loop to print Leading character before Diagonal character in each line
+for(j=1; j<i; j++)
+{
+//Printing Leading character
+cout << LEADER_CHAR;
+}
+
+//Printing Diagonal character
+cout << DIAGONAL_CHAR << " \n";
+}
+
+cout << "\n\n";
+return 0;
+}

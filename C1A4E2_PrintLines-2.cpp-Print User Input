@@ -1,0 +1,46 @@
+/*
+ *7/31/2016
+ *file name (C1A4E2_PrintLines-2.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The program uses the function, main() to mark the start of the beginning of the program
+ *The program also uses cin and cout for capturing the user input and output respectively.
+ *The program also uses the PrintLines0(), PrintLines1(), PrintLines2(), and PrintLines3()
+ *functions that pass parameters of one character input and one inter input given by the 
+ *programs user inputs.
+ */
+#include <iostream>//#include "PrintLines2.c"; 
+using namespace std;
+
+
+/*The program prompts user input of characters and numbers and displays and passes the 
+ *appropriate user entries to the function arguments. The functions then passes the 
+ *input to cout and prints out the appropriate displays. Also, the function has the following 
+ *criteria: Prompts the to enter one integer, and one character. The program makes the folowing 
+ *call in order to pass the appropriate argument:PrintLines(charcterToDisplay, numberOfCharacters). 
+ *The program also has test inputs to ensure the program is working properly. The test inputs are 
+ *as follows: U 20 10, V 0 10, W 25 0, X 25 1, and Y 150 3.
+ */
+void PrintLines2(int input_character, int char_Num);
+int main()                                               //start of main() function
+{
+ for (int num = 0; num < 1; num++)                       //for loop to take the user input 5 times
+ {
+ int num_char;                                           //initalizing local variables 
+ char in_char;                                           //iniializing character
+  cout << "Please enter a charecter and one integer:\n ";//Prompt the user to enter a char and 2 integers
+  cin >> in_char;                                        //cin for input character
+  cin >> num_char;                                       //cin for user input number
+  PrintLines2(in_char, num_char);                        //Two parameter function call
+ }
+ return 0;
+}
+void PrintLines2(int input_character, int char_Num)      //PrintLines2.c has two arguments
+{
+ while (char_Num > 0)
+ {
+  cout <<char(input_character);
+  --char_Num;
+ }
+}

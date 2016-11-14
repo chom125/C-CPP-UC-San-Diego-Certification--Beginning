@@ -1,0 +1,35 @@
+/*
+ *July 21, 2016
+ *file name: (C1A3E1_main.c)
+ *Operating Systems (Win10)
+ *Compiler & Version (Cygwin GnuPG v1.26 (GNU/Linux)
+ *
+ *The functions used are main(), printf(), scanf() and cin.get(). The main() function
+ *is the program start-up after program initialization. The cin.get
+ *function you get one character from user input and treats the 
+ *input as a character. The printf() function prints the user message "Enter a number:"
+ *and the scanf() input scans the user input from a memory location.
+ */
+  
+/*
+ *This program takes a user input literal and scans it into a memory location.
+ *The memory location is then is used to help calculate the factorial of the user input.
+ *if the user input for example is 4 then the program calulates all the factorials
+ *from 1 to 4 and prints them to the output.  
+ */
+  
+#include <stdio.h>
+
+int main(void)
+{
+    long input, fact = 1;
+    int loop;
+    printf("Enter a decimal number value greater then zero: ");//print statement
+    scanf("%ld", &input);                                      //scan the user input from a memory location
+    printf("nbr           nbr!\n""--------------------\n");    //output printf statement for table header 
+    for (loop = 1L; loop <= input; ++loop)                     //initializing a for loop 
+    {
+        printf("%2d %11ld\n", loop, fact *= loop);             //print factorial output number and factorial
+    }
+    return 0;                                                  //return 0 if program sucessful
+}

@@ -1,0 +1,52 @@
+/*
+ *7/27/2016
+ *file name (C1A4E1_main.c)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ */
+ 
+/*This program uses the function main() to mark the start of the beginning of the program
+ *The program also uses the ComputerMinimum and ComputerMaximum functions which are
+ *given by the user inputs and read into values val1 and val2 respectively. 
+ */
+ 
+/*This program uses a function ComputerMinimum and ComputerMaximum which returns the minimum
+ *and maximum values of the user input respectively. minimum and maximum values are stored
+ *into the 2 given user inputs val1 and val2 respectively. The following specifications
+ *are also included in this program:
+ *ComputerMinimum and ComputerMaximum must compare the values referenced by its parameters;
+ *and return a reference to the smallest or largest varible depending on the function used
+ *ComputerMaximum or ComputerMinimum. Also the  program must adhere to the the following:
+ *Use tow formal parameters, each of type "reference to const double";
+ *Return type "reference to double" (do not "reference to const double"); Use only one statement;
+ *Don't use variables other than their formal parameters; Don't use #define or #include; Don't
+ *use literal values. Don't use add, subtract, multiply, or divide; 
+ *Don't use the case or switch statements; 
+ *Don't call function or macros;
+ *Don't display anything; 
+ */
+#ifndef C1A4E1_COMPUTEMINIMUM_H_INCLUDED       //beginning #ifndef closing statement #endif.
+double ComputeMinimum(double val1, double val2)
+{
+    return (val1 > val2) ? val2 : val1;
+}
+#endif                                         //end 
+
+#ifndef C1A4E1_COMPUTEMAXIMUM_H_INCLUDED       /*includes code between ifndef and #endif*/
+double ComputeMaximum(double val1, double val2) 
+{
+    return (val1 > val2) ? val1 : val2; 
+}
+#endif                                         //C1A4E1_COMPUTERMAXIMUM_H_INCLUDED end
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)                                 //start of the main() function. 
+{
+    double val1, val2;                         //values used for min an max val1 and val2
+
+    printf("Enter two values:");               //Prompt the user to inter 2 values.  
+    scanf("%lf%lf", &val1, &val2);             //scan the values from user input val1 and val2
+    printf("ComputeMinimum(%lf, %lf) returned %lf\n", val1, val2, ComputeMinimum(val1, val2));//print min
+    printf("ComputeMaximum(%lf, %lf) returned %lf\n", val1, val2, ComputeMaximum(val1, val2));//print max
+    return 0;
+}

@@ -1,0 +1,53 @@
+/*
+ *7/31/2016
+ *file name (C1A4E2_PrintLines-3.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The program uses the function, main() to mark the start of the beginning of the program
+ *The program also uses the cout, and cin and the function, PrintLines1() function
+ *that passes the inputs and displays the input character in rows and columns given by the 
+ *user input of one input character and two input integers.
+ */
+#include <iostream>//#include "PrintLines3.c"; 
+using namespace std;
+/*The program prompts user input of one character and two numbers and displays and the 
+ * the user input character of numbers and rows input by the users input. The functions 
+ *then print out the appropriate displays. Also, the program has the following criteria: 
+ *prompts the to enter thre inputs one character, and two numbers.
+ *display the inoput character, and the number of lines of columns and rows of the character
+ *base on the user input. Makes the following calls in order passing the appropriate entries 
+ *PrintLines(charcterToDisplay, numberOfCharacters, numberOfLines), PrintLines(charcterToDisplay, 
+ *numberOfCharacters), PrintLines(charcterToDisplay), and PrintLines(charcterToDisplay); 
+ *The program also has test input to ensure the program is working properly. The test inputs 
+ *are as follows: U 20 10, V 0 10, W 25 0, X 25 1, and Y 150 3.
+ */
+void PrintLines3(int input_character, int char_Num, int line_Num);//prototyping of fucntion PrintLines3
+int main()                                                        //start of main() function
+{
+ for (int num = 0; num < 1; num++)                                 //for loop to take the user input 1 time
+ { 
+ int num_char, num_line;                                           //initializing variables 
+ char in_char;                                                     //initializing  character
+  cout << "Please enter a character and two integers:\n ";         //Prompt to inter int's and char's
+  cin >> in_char;                                                  //cin for input character
+  cin >> num_char;                                                  //cin for user input number
+  cin >> num_line;                                                 //cin for input integer
+  PrintLines3 (in_char, num_char, num_line);                       //Three parameter function call  
+ }
+ return 0;
+ cout << "\n";                                                     //end of the line
+}
+void PrintLines3 (int input_character, int char_Num, int line_Num) //PrintLines3.c
+{
+int charnumb_copy;
+ while (line_Num > 0)//while loop to print the character in line_num lines
+ {
+  for (charnumb_copy = char_Num; charnumb_copy > 0; --charnumb_copy)//For loop to ouput characters
+  {
+   cout << char (input_character);                                  //output input character passed
+  }
+  cout << "\n";                                                     //end of line
+  --line_Num;                                                       //decrementing line number
+ }
+}

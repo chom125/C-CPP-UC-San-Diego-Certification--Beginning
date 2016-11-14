@@ -1,0 +1,36 @@
+/*
+ *7/30/2016
+ *file name (C1A4E2_PrintLines-0.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *This program uses the function, main() to mark the start of the beginning of the program.
+ *The program also uses the cout, and cin, functions which are the c++ output and user input
+ *read functions respectively.  
+ */
+#include <iostream>
+using namespace std;//#include "PrintLines0.cpp"; 
+/*The program prompts user input of characters and numbers and displays and passes the 
+ *appropriate user entries to the function arguments. The functions then print out the 
+ *appropriate displays. Also, the function has the following criteria: Prompts the to enter 
+ *3 inputs character, the number of times to display the character, and the number of lines 
+ *to display. Makes the following calls in order passing the appropriate entries 
+ *PrintLines(charcterToDisplay), the program also has test input to ensure the program is working 
+ *properly. The test inputs are as follows: U 20 10, V 0 10, W 25 0, X 25 1, and Y 150 3.
+ */
+int PrintLines0();                             //Prototyping PrintLines() with zero arguments
+int main()                                     //Start of main() function
+{
+    int num_line;                              //initializing local variables 
+    for (int num = 0; num < 1; num++)          //for loop to take the user input 1 time before exit
+    {
+        cout << "Please Enter One Character: ";//Prompt the user to enter one integer
+        cin >> num_line;
+        PrintLines0();                         //function call
+    }
+    return 0;
+}
+int PrintLines0()                              //PrintLines0.c call function to print Z
+{
+    cout << "Z";                               //print Z character 
+}

@@ -1,0 +1,30 @@
+/*
+ *C/C++ Programming I Fundamental Programming Concets
+ *July 14th, 2016
+ *file name: (C1A1E1_main.c)
+ *Operating System (Win10)
+ *Compiler & Version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ *The main function declares the start of the program.
+ *Use \ in any string literal and use %% to print a %.  
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+# define TEN_PERCENT 10
+# define HUNDRED_PERCENT 100
+
+int main(void)
+{
+//The printf statement is used to print a number of strings exactly as given in homework.
+
+    printf(
+        "In C/C++ the case of letters is significant.\n" 
+        "main is where program execution begins.\n"
+        "A semicolon terminates most statements.\n"
+        "%d%% of \"nothing\" is %d%% of \"nothing\".\n"
+        "Use \\n to cause a newline; use \\t to cause a tab.\n"
+        "Use \\a to cause a beep (only on some platforms)!\n",
+        TEN_PERCENT, HUNDRED_PERCENT);
+    return EXIT_SUCCESS;
+}

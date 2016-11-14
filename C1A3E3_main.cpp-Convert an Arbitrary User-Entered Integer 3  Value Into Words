@@ -1,0 +1,60 @@
+/*
+ *7/28/2016
+ *file name (C1A3E3_main.cpp)
+ *Operating System (Win10)
+ *Compiler & version (Cygwin GnuPG v1.2.6 (GNU/Linux))
+ *
+ * This program uses the function, main() to mark the start of the beginning of the program.
+ * The program also uses the cout, and cin, functions which are the c++ output and user input
+ * read functions respectively.  
+ */
+#include <iostream>
+#include <cstdlib>
+using std::cin;
+using std::cout;
+int const DIVISOR = 10; //const int DIVISOR = 10;
+/*This program takes the user_input of any variable and reverses that variable and 
+ *displays both the original user_input and reversed variable in words. The program decides
+ *if the user_input is negative, or positive and calculates the reverse of the integer and 
+ *displays it in words.  *The program also does not use any non-const variables that are not 
+ *type int or type bool nor does it use any floating point types such as the pow function, 
+ *math.h, type double, etc. Also, do not use arrays or recursion; recursion  or nested loops.
+ */
+int main()
+{
+  int user_input, divisor, mostsignif;              //initializing integers
+  cout << "Enter an integer value: ";               //ask for user_input value
+  cin >> user_input;                                //store user_input
+  cout << '\"' << user_input << "\" in words is \"";//output user input in words
+  if (user_input < 0)                               // if negative number
+  {
+    user_input = -user_input;                       // make user_input positive
+    cout << " minus ";                              // print "minus"
+  }
+  for (divisor = 1, mostsignif = user_input; mostsignif > DIVISOR - 1;//Find the correct divisor 
+    mostsignif /= DIVISOR)
+    divisor *= DIVISOR;
+  do                                                // Pick off the digits and display as English words.
+  {
+    mostsignif = user_input / divisor;              // current mostsignif number
+    switch (mostsignif)                             // mostsignif print in words
+    {
+    case 0: cout << "zero"; break;
+    case 1: cout << "one"; break;
+    case 2: cout << "two"; break;
+    case 3: cout << "three"; break;
+    case 4: cout << "four"; break;
+    case 5: cout << "five"; break;
+    case 6: cout << "six"; break;
+    case 7: cout << "seven"; break;
+    case 8: cout << "eight"; break;
+    case 9: cout << "nine"; break;
+    }
+    user_input -= divisor * mostsignif;             // delete mostsignf 33 divisor
+    divisor /= DIVISOR;                             // reduce divisor
+    if (divisor)
+      cout << ' ';                                  // add space between words
+  } while (divisor);                                // repeat until divisor non-0
+  cout << "\"";                                     //close quotes
+  return EXIT_SUCCESS;
+}
